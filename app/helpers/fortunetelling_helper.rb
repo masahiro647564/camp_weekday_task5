@@ -1,0 +1,2 @@
+module FortunetellingHelper
+end
