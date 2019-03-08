@@ -33,4 +33,9 @@ module FortunetellingHelper
   def age(birthday)
     @age = (Date.today.strftime('%Y%m%d').to_i - @birthday.to_i) / 10000
   end
+
+  def happy(birthday)
+    # birthday_today = @birthday[4, 4]
+    @happy = "今日があなたの誕生日です｡" if birthday[4, 4].to_i == Date.today.strftime("%m%d").to_i
+  end
 end
