@@ -1,9 +1,13 @@
 class FortunetellingController < ApplicationController
-  def show
-    @years = params[:numbers][0..3].to_i
-    @months = params[:numbers][4..5].to_i
-    @dates = params[:numbers][6..7].to_i
-    @fortune = ["大吉", "中吉", "小吉", "凶", "大凶"].shuffle[0]
+  include FortunetellingHelper
 
+  def show
+    @birthday = params[:birthday]
+    #@birthdayにパラメーターを入れたものに､それぞれ代入する｡
+    @year = @birthday[0, 4].to_i
+    @month = @birthday[4, 2].to_i
+    @date = @birthday[6, 2].to_i
+    @constellations = constellation(@month, @date)
+    @fortune = ["大吉", "中吉", "小吉", "凶", "大凶"].shuffle[0]
   end
 end
