@@ -9,5 +9,6 @@ class FortunetellingController < ApplicationController
     @date = @birthday[6, 2].to_i
     @constellations = constellation(@month, @date)
     @fortune = ["大吉", "中吉", "小吉", "凶", "大凶"].shuffle[0]
+    @age = age(@birthday)
   end
 end

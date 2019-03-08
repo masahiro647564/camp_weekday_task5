@@ -29,4 +29,8 @@ module FortunetellingHelper
                       end
 
   end
+
+  def age(birthday)
+    @age = (Date.today.strftime('%Y%m%d').to_i - @birthday.to_i) / 10000
+  end
 end
