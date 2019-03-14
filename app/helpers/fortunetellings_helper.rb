@@ -35,7 +35,6 @@ module FortunetellingsHelper
   end
 
   def happy(birthday)
-    # birthday_today = @birthday[4, 4]
     @happy = "今日があなたの誕生日です｡" if birthday[4, 4] == Date.today.strftime("%m%d")
   end
 end
